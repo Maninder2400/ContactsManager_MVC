@@ -1,0 +1,100 @@
+﻿@model PersonAddRequest
+
+@{
+    ViewBag.Title = "Preview";
+    ViewBag.CurrentUrl = "~/Persons/Create/PreviewPerson";
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .preview-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .preview-item {
+            margin-bottom: 20px;
+        }
+
+            .preview-item strong {
+                display: inline-block;
+                width: 150px;
+                font-weight: bold;
+                margin-right: 15px;
+                text-align: right;
+            }
+
+        .btn-create {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-create:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="preview-container">
+        <h2>Preview of Entered Details</h2>
+        <div class="preview-item">
+            <strong>Person Name:</strong> @Model.PersonName
+        </div>
+        <div class="preview-item">
+            <strong>Email:</strong> @Model.Email
+        </div>
+        <div class="preview-item">
+            <strong>Date of Birth:</strong> @Model.DateOfBirth!.Value.ToString("yyyy-MM-dd")
+        </div>
+        <div class="preview-item">
+            <strong>Gender:</strong> @Model.Email
+        </div>
+        <div class="preview-item">
+            <strong>Country:</strong> @ViewBag.Country
+        </div>
+        <div class="preview-item">
+            <strong>Address:</strong> @Model.Address
+        </div>
+        <div class="preview-item">
+            <strong>Receive Newsletter:</strong> @Model.RecieveNewsLetter
+        </div>
+
+        <form asp-controller="Persons" asp-action="Create" method="post">
+            <input type="hidden" name="PersonName" value="@Model.PersonName" />
+            <input type="hidden" name="Email" value="@Model.Email" />
+            <input type="hidden" name="DateOfBirth" value="@Model.DateOfBirth!.Value.ToString("yyyy-MM-dd")" />
+            <input type="hidden" name="Gender" value="@Model.Gender" />
+            <input type="hidden" name="CountryID" value="@Model.CountryID" />
+            <input type="hidden" name="Address" value="@Model.Address" />
+            <input type="hidden" asp-for="RecieveNewsLetter" />
+            <button type="submit" class="btn-create">Create</button>
+        </form>
+    </div>
+
+</body>
+</html>

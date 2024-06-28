@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsManager.CORE", "Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsManager.Infrastructure", "ContactsManager.Infrastructure\ContactsManager.Infrastructure.csproj", "{DAEED244-BD20-447F-8794-8D4DC24C2F2C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9442D81E-0433-449D-9142-3DC8B09E564C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4BA93AE9-764A-4B4A-A72B-5C0D33B89F92} = {9442D81E-0433-449D-9142-3DC8B09E564C}
+		{8BAC5391-5185-41CA-B556-666D5D279D40} = {9442D81E-0433-449D-9142-3DC8B09E564C}
+		{DAEED244-BD20-447F-8794-8D4DC24C2F2C} = {9442D81E-0433-449D-9142-3DC8B09E564C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7DBC5F16-5086-4251-B475-4A62E97A28BE}
